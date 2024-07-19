@@ -1,32 +1,32 @@
 
 class Users {
     constructor() {
-        this.people = [];
+        this.personas = [];
     }
 
-    addPerson(id, name, room) {
-        let person = { id, name, room };
-        this.people.push(person);
-        return this.people;
+    addPerson(id, nombre, sala) {
+        let persona = { id, nombre: nombre, sala: sala };
+        this.personas.push(persona);
+        return this.personas;
     }
 
     getPerson(id) {
-        let person = this.people.filter(person => person.id === id)[0];
-        return person;
+        let persona = this.personas.filter(persona => persona.id === id)[0];
+        return persona;
     }
 
     getPeople() {
-        return this.people;
+        return this.personas;
     }
 
-    getPeopleForRoom(room) {
-        let peopleForRoom = this.people.filter(person => person.room === room);
-        return peopleForRoom;
+    getPeopleForsala(sala) {
+        let peopleForsala = this.personas.filter(persona => persona.sala === sala);
+        return peopleForsala;
     }
 
     deletePerson(id) {
         let deletePerson = this.getPerson(id);
-        this.people = this.people.filter(person => person.id !== id);
+        this.personas = this.personas.filter(persona => persona.id !== id);
         return deletePerson;
     }
 }
